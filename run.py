@@ -75,3 +75,104 @@ def startup_view():
     # Print the text with a slower typing
     # Effect and aditional customizations
     # Adjust speed ig needed (lower number means slower typing)
+
+def txt_effect(text_to_print):
+    for character in text_to_print:
+        time.sleep(0.03)
+        sys.stdout.write(character)
+        sys.stdout.flush()
+    # From:
+    # https://stackoverflow.com/questions/2084508/clear-termina-in-python
+
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def display_hangman(mistakes, chosen_level):
+    hangman_stages = [
+        "",
+        f"   _______\n"
+        f"  |       \n"
+        f"  |\n"
+        f"  |\n"
+        f"  |\n"
+        f"  |\n"
+        f"  |\n"
+        f"__|________",
+        f"   _____\n"
+        f"  |     |\n"
+        f"  |\n"
+        f"  |\n"
+        f"  |\n"
+        f"  |\n"
+        f"  |\n"
+        f"__|________",
+        f"   _____\n"
+        f"  |     |\n"
+        f"  |     o\n" 
+        f"  |     /\n
+        f"  |\n"
+        f"  |\n"
+        f"  |\n"
+        f"__|________",
+        f"   _____\n"
+        f"  |     |\n"
+        f"  |     o\n" 
+        f"  |    /|\n"
+        f"  |\n"
+        f"  |\n"
+        f"  |\n"
+        f"__|________",
+        f"   _____\n"
+        f"  |     |\n"
+        f"  |     o\n" 
+        f"  |    /|\\\n"
+        f"  |\n"
+        f"  |\n"
+        f"  |\n"
+        f"__|________",
+        f"   _____\n"
+        f"  |     |\n"
+        f"  |     o\n" 
+        f"  |    /|\\\n"
+        f"  |    /\n"
+        f"  |\n"
+        f"  |\n"
+        f"__|________",
+        f"   _____\n"
+        f"  |     |\n"
+        f"  |     o\n" 
+        f"  |    /|\\\n"
+        f"  |    /\\\n"
+        f"  |\n"
+        f"  |\n"
+        f"__|________",
+    ]
+    # Adjust the rate of displaying hangman stages on the chosen level
+    if chosen_level == "Easy - 8 lives: Perfect for beginners":
+        display_per_mistake = 1 # Display two stages per mistake
+    # Easy level - Display 1 stage per mistake
+    # Hard level - Display 2 stage per mistake
+    else:
+        display_per_mistake = 2
+    # Calculate the number of stages to display for the current mistake
+    stages_to_display = min(mistakes *
+                            display_per_mistake,
+                            len(hangman_stages) - 1)
+    print("\033[91m" + hangman_stages
+          [stages_to_display] + \033[0m")
+    return stages_to_display
+
+def choose_level():
+    startup_view()
+    name_is_valid = False
+    while name_is_valid is False:
+        name = get_user_input("Gamer, your username"
+                              "is your secret sauce."
+                              "Make it funny!\n")
+        clear_terminal()
+        name_is_valid = len(name) >= 3
+        if name_is_valid is False:
+            print("Gimme names, not games!")
+            print("\033[91mEnter at least 3 letters \033[0m"
+                  "\033[91mor numbers!\033[0m\n")
+                  
