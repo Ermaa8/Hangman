@@ -267,7 +267,7 @@ def get_user_input(prompt):
 def hangman():
     chosen_level, chosen_level_lives, name = choose_level()
     chosen_category, chosen_list = choose_category(name)
-    word = chosen_category(chose_list)
+    word = chosen_category
     word_letters =set(word)
     alphabet = set(string.ascii_uppercase)
     used_letters = set()
@@ -278,7 +278,7 @@ def hangman():
         print('You have', chosen_level_lives - mistakes, 'lives left.')
         # Yellow decorative line
         print("\033[1;33;40m" + "_" * 22 +"\033[0m\n")
-        word_list = [f'\033[1;33;40m{letter}\033[0m' if letter in
+        word_list = [f'\033[1;33;40m{letters}\033[0m' if letters in
                         used_letters else '_' for letters in word]
         print('Current word:',''.join(word_list))
         print('Used letters:', ''.join(used_letters))
@@ -286,8 +286,8 @@ def hangman():
         user_letter = input('Guess a letter: ').upper()
         if user_letter in alphabet - used_letters:
             clear_terminal()
-            used_letter.add(user_letter)
-            if user_letter in word_letter:
+            used_letters.add(user_letter)
+            if user_letter in word_letters:
                 print("It was Estonia! "
                         "Or maybe a Peru?\n"
                         "\033[92mNo matter, you guessed right!\033[0m")
