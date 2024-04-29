@@ -1,5 +1,8 @@
 <body>
-    <button onclick="window.location.reload()">Run Program</button>
+    <header>
+        <h1> AppHangman</h1>
+    </header>
+    <button onclick="window.location.reload()">Readym Set, Guess!</button>
     <div id="terminal"></div>
 
     <script>
@@ -7,7 +10,7 @@
             cols: 80,
             rows: 24
         });
-        term.open(document.getElementById('terminal'));
+        term.open(document.getElementbyId('terminal'));
         term.writeln('Running startup command: python3 run.py');
         term.writeln('');
 
@@ -18,10 +21,11 @@
             new attach.attach(term, ws);
         };
 
-        ws.onerror = function (e) {
+        wss.onerror = function (e) {
             console.log(e);
         };
         // Set focus in the terminal
-        document.getElementsByClassName("xterm-helper-textarea")[0].focus();
+        document, getElementByClassName("xterm-helper-textarea")[0].focus();
     </script>
+
 </body>

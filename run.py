@@ -56,14 +56,14 @@ def startup_view():
                "thrugh the alphabet jungle.\n\n")
     txt_effect("How to play\n")
     txt_effect("\033[91m"
-               f"  ______\n"
-               f" |      |\n" 
-               f" |      o\n"
-               f" |     /|\\\n"
-               f" |     / \\\n"
-               f" |\n"
-               f" |\n"
-               f"_|________
+               f"   ______\n"
+               f"  |      |\n" 
+               f"  |      o\n"
+               f"  |     /|\\\n"
+               f"  |     / \\\n"
+               f"  |\n"
+               f"  |\n"
+               f"__|________"
                + "\033[0m\n\n")
     print("1. Enter your username. "
            "It must be 3 letters or 3 numbers.")
@@ -109,7 +109,7 @@ def display_hangman(mistakes, chosen_level):
         f"   _____\n"
         f"  |     |\n"
         f"  |     o\n" 
-        f"  |     /\n
+        f"  |     /\n"
         f"  |\n"
         f"  |\n"
         f"  |\n"
@@ -159,7 +159,7 @@ def display_hangman(mistakes, chosen_level):
                             display_per_mistake,
                             len(hangman_stages) - 1)
     print("\033[91m" + hangman_stages
-          [stages_to_display] + \033[0m")
+          [stages_to_display] + "\"033[0m")
     return stages_to_display
 
 def choose_level():
@@ -208,18 +208,19 @@ def choose_level():
                       "\033[91ma number between 1 and 2. \033[0m")
         else:
              print(" ")
-             print("Your character sounds like a dolphin sneeze.")
+             print("Your character sounds like a Estonian song.")
              print(f"\033[91m{name}, Please enter a number. \033[0m")
 
- def choose_category(name):
-     print("Step 2: Let's explore!")
-     # Yellow decorative line
-     print("\033[1;33;40m" + "_" * 43 + "\033[0m"\n")
-     print("What is your favorite category?")
-     for i, category in enumerate(categories):
-        print(f"{i+1}. {category}")
-    while True:
-        print(" ")
+
+    def choose_category(name):
+        print("Step 2: Let's explore!")
+        # Yellow decorative line
+        print("\033[1;33;40m" + "-" * 43 + "\033[0m\n")
+        print("What is your favorite category?")
+        for i, category in enumerate(categories):
+            print(f"{i+1}. {category}")
+        while True:
+            print(" ")
         choice = input("Enter your choice (1-4): ")
         if choice.isdigit():
             choice = int(choice) - 1
@@ -244,7 +245,7 @@ def choose_level():
                 print("I see yu're struggling with"
                       "your keyboard skills.")
                 print("\033[1mPease enter a number between 1 and 4.\033[0m")
-            else:
+        else:
                 print("_")
                 print("Is that character part of a secret code?")
                 print(f"\033[91m{name}, Please \033[0m"
@@ -264,7 +265,7 @@ def choose_level():
             while len(word_letters) > 0 and mistakes < chosen_level_lives:
                 display_hangman(mistakes, chosen_level)
                 print(" ")
-                print('You have' chosen_level_lives - mistakes, 'lives left.')
+                print('You have', chosen_level_lives - mistakes, 'lives left.')
                 # Yellow decorative line
                 print("\033[1;33;40m" + "_" * 22 +"\033[0m\n")
                 word_list = [f'\033[1;33;40m{letter}\033[0m' if letter in
@@ -348,8 +349,8 @@ def choose_level():
                         else:
                             print("\n\033[91mPlease enter \033[0m"
                                   "\033[91m'y' or 'n'.\033[0m\n")
-                    # Handle "n" from the first prompt directly
-                    elif choice =="n":
+                # Handle "n" from the first prompt directly
+                elif choice == "n":
                         clear_terminal()
                         print(" ")
                         print("Thanks for playing!")
@@ -363,13 +364,13 @@ def choose_level():
                         print(" ")
                         # Exit the entire loop after farewell message
                         break
-                    else:
+                else:
                         print(" ")
                         print("Wow, that was... something")
                         print("trying to speak Morse code?")
                         print("\033[91mPlease enter 'y' or 'n'.\033[0m\n")
 
-                if_name_ == "_main_":
+                if __name__ == "__main__":
                     hangman()
                     continue_game()            
 
