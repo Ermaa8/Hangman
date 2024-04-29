@@ -37,11 +37,21 @@ languages = [
     "Turkish", "Thai", "Vietnamese", "Polish", "Greek", "Swedish", "Dutch", "Korean", "Indonesian",
     "Russian", "Japanese", "Chinese", "Hindi", "Bengali", "Urdu"
 ]
+fruits = [
+    "gooseberry", "soursop", "kumquat", "ackee", "elderberry", "rhubarb", "honeydew",
+    "startfruit", "mandarin", "apple", "pear", "strawberry", "banana", "orange", "grape",
+    "peach", "watermelon", "blueberry", "mango", "kiwi", "pineapple", "cherry", "guava", 
+    "pomegranate", "cranberry", "blackberry", "kiwifruit", "papaya", "lychee", 
+    "coconout", "nectarine", "mulberry", "clementine"
+]
+
+
 categories = {
     "Cities": cities,
     "Countries": countries,
     "Flowers": flowers,
     "Languages": languages
+    "Fruits": fruits
 }
 levels = {
     "Easy - 8 lives: Perfect for begginers": 8,
@@ -52,7 +62,7 @@ def startup_view():
     # Plays the startup welcome effect with colors and text effects.
     # Welcome message with slow typing effect using txt_effect
     txt_effect("Welcome to The Hangman!\n\n")
-    txt_effect("Prepaare yourself for a journey "
+    txt_effect("Prepare yourself for a journey "
                "thrugh the alphabet jungle.\n\n")
     txt_effect("How to play\n")
     txt_effect("\033[91m"
@@ -220,7 +230,7 @@ def choose_category(name):
         print(f"{i+1}. {category}")
     input_valid = False
     while input_valid is False:
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-5): ")
         if choice.isdigit():
             choice = int(choice) - 1
             if 0 <= choice < len(categories):
@@ -257,7 +267,7 @@ def get_user_input(prompt):
 def hangman():
     chosen_level, chosen_level_lives, name = choose_level()
     chosen_category, chosen_list = choose_category(name)
-    word = chosen_category_word(chosen_list)
+    word = chosen_category(chosen_list)
     word_letters =set(word)
     alphabet = set(string.ascii_uppercase)
     used_letters = set()
