@@ -50,7 +50,7 @@ categories = {
     "Cities": cities,
     "Countries": countries,
     "Flowers": flowers,
-    "Languages": languages
+    "Languages": languages,
     "Fruits": fruits
 }
 levels = {
@@ -267,7 +267,7 @@ def get_user_input(prompt):
 def hangman():
     chosen_level, chosen_level_lives, name = choose_level()
     chosen_category, chosen_list = choose_category(name)
-    word = chosen_category(chosen_list)
+    word = chosen_category(chose_list)
     word_letters =set(word)
     alphabet = set(string.ascii_uppercase)
     used_letters = set()
