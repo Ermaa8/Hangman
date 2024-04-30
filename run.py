@@ -309,7 +309,7 @@ def hangman():
         print(" ")
         print("\033[91mOh, no!\n\n\033[0m"
                 "looks like your brain"
-                 "went\non vacation.\n")
+                "went on vacation.\n")
         print("\033[91mThe word was", word, "\033[0m")
         print(" ")
     else:
