@@ -308,7 +308,7 @@ def hangman():
         display_hangman(mistakes, chosen_level)
         print(" ")
         print("\033[91mOh, no!\n\n\033[0m"
-                "looks like your brain"
+                "looks like your brain
                 "went on vacation.\n")
         print("\033[91mThe word was", word, "\033[0m")
         print(" ")
