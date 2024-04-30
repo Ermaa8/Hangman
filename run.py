@@ -213,12 +213,12 @@ def choose_level():
                 return chosen_level, chosen_level_lives, name
             else:
                 print(" ")
-                print("My circuits are overloaded!")
+                print("It's too much, try again!")
                 print(f"\033[91m{name}, Please enter \033[0m"
                       "\033[91ma number between 1 and 2. \033[0m")
         else:
              print(" ")
-             print("Your character sounds like a Estonian song.")
+             print("Your character sounds like a song.")
              print(f"\033[91m{name}, Please enter a number. \033[0m")
 
 def choose_category(name):
@@ -254,7 +254,7 @@ def choose_category(name):
                 print("_")
                 print("I see yu're struggling with"
                         "your keyboard skills.")
-                print("\033[1mPease enter a number between 1 and 4.\033[0m")
+                print("\033[1mPease enter a number between 1 and 5.\033[0m")
         else:
                 print("_")
                 print("Is that character part of a secret code?")
@@ -307,9 +307,9 @@ def hangman():
     if mistakes == chosen_level_lives:
         display_hangman(mistakes, chosen_level)
         print(" ")
-        print("\033[91mAw, shucks!\n\n\033[0m"
-                "ooks like your brain"
-                "went\non vacation with the penguins.\n")
+        print("\033[91mOh, no!\n\n\033[0m"
+                "looks like your brain"
+                 "went\non vacation.\n")
         print("\033[91mThe word was", word, "\033[0m")
         print(" ")
     else:
