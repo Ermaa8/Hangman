@@ -6,5 +6,10 @@ This game contains of two levels. First level is easier and second level is hard
 Live link can be found here:
 ![AppHangman]()
 
+## CONTENT
+
+*[How To Play](#how-to-play)
+
+*[User Experience](#user-experience)
 
 
