@@ -8,13 +8,13 @@ Live link can be found here:
 
 ## CONTENT
 
-### [How To Play](#how-to-play)
+* [How To Play](#how-to-play)
 
-### [User Experience](#user-experience)
-## [Flow Chart](#flow-chart)
-## [User Stries](#user-stries)
-### [First Time User](#first-time-user)
-### [Returing User](#returing-user)
+* [User Experience](#user-experience)
+* [Flow Chart](#flow-chart)
+* [User Stries](#user-stries)
+    +[First Time User](#first-time-user)
+    + [Returing User](#returing-user)
 
 
 
