@@ -94,8 +94,44 @@ The site is a singe page with 5 steps
 
 ### Frameworks Libraries and Programs Used
 
-- [Am I Responsive]()
+- [Am I Responsive](https://ui.dev/amiresponsive)
+- [Github](https://github.com/)
+- [GitPod](https://gitpod.io/)
+- [TinyPNG](https://tinypng.com/)
+- [Favicon Creator](https://favicon.io/)
 
+## Deployment
+
+This project was deployed using Code Institute's moch termina for Heroku.
+
+These steps were taken for the deployment:
+- Create an accound or log in to Heroku.
+- On the dashboard, in the right corner click the button "New" and choose "Create New App".
+- Pick the name. Unique name is must have because it can match other names.
+- Select your region.
+- Add payment method if needed.
+- Click create app.
+- n the menu at the top of the page, go to "Settings Tab"
+- Scroll down to Config Vars and click "Reveal Config Vars".
+- Add a new Config Vars you will find Buildpacks.
+- Click "Add Buildpacks".
+- Select Python.
+- repeat this step but select Nodejs.
+- Important to know: The Python has to be picked before Nodejs, if they are not in a order you can just drag upp so that Python is on a first place.
+- Scroll back to the top of the page, click menu and go to Deploy Tab.
+- Select GitHub as adeployment method and confirm.
+- Search your repository name and connect that.
+- Scroll down to the bottom of the page and there you can choose if you want to deploy automaticly or manually.
+- Click "View" to see the live site.
+
+## Testing
+
+- While running the code thrught [pep8ci](https://pep8ci.herokuapp.com/) I noticet many bugs. Picture bellow shows unfixed errors:
+![Testing 1](Readme.images/Picture1.png)
+
+- However in the second testing majority of the bugs are fixed, but there is one bug that is not pssible to fix for one reason. It shows that line is too long, but in order for my code to work, line has to be that length. 
+
+![Testing 2](Readme.images/Picture2.png)
 
 
 

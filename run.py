@@ -281,15 +281,18 @@ def choose_category(name):
 def get_user_input(prompt):
     return input(prompt)
 
+
 def check_user_play(user_letter, word):
     return user_letter.lower() in word.lower()
-   
+
+
 def display_current_status(mistakes, chosen_level, chosen_level_lives):
     display_hangman(mistakes, chosen_level)
     print(" ")
     print('You have', chosen_level_lives - mistakes, 'lives left.')
     # Yellow decorative line
     print("\033[1;33;40m" + "_" * 22 + "\033[0m\n")
+
 
 def hangman():
     chosen_level, chosen_level_lives, name = choose_level()
@@ -304,7 +307,7 @@ def hangman():
         display_hangman(mistakes, chosen_level)
         display_current_status(mistakes, chosen_level, chosen_level_lives)
         hidden_word = [f'\033[1;33;40m{letters}\033[0m' if letters.lower() in
-                      used_letters else '_' for letters in word]
+                       used_letters else '_' for letters in word]
         print('Current word:', ''.join(hidden_word))
         print('Used letters:', ''.join(used_letters))
         print(" ")
@@ -315,7 +318,7 @@ def hangman():
         else:
             if check_user_play(user_letter, word):
                 print("It was Estonia! Or maybe a Peru?\n"
-                    "\033[92mNo matter, you guessed right!\033[0m")
+                      "\033[92mNo matter, you guessed right!\033[0m")
                 guessed_letters = guessed_letters + word.lower().count(user_letter.lower())
             else:
                 mistakes = mistakes + 1
