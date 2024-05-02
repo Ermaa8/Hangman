@@ -304,7 +304,7 @@ def hangman():
         display_hangman(mistakes, chosen_level)
         display_current_status(mistakes, chosen_level, chosen_level_lives)
         hidden_word = [f'\033[1;33;40m{letters}\033[0m' if letters.lower() in
-                      used_letters else letters for letters in word]
+                      used_letters else '_' for letters in word]
         print('Current word:', ''.join(hidden_word))
         print('Used letters:', ''.join(used_letters))
         print(" ")
