@@ -82,7 +82,20 @@ The site is a singe page with 5 steps
 - The red hangman bar will appear and everytime you guess wrong letter a line will appear and decrease your number of lives. If you guess right, letter will be placed in a right place.
 
 ### Game Over
-- When you are done guessing, if you did not make it right, result will show you which word it was and you will have a option to continue if tou want or quit a game. An last but not least you will get game over message
+- When you are done guessing, if you did not make it right, result will show you which word it was and you will have a option to continue if tou want or quit a game. An last but not least you will get game over message.
+
+## Technhngies Used
+
+### Languages Used
+- HTML
+- CSS
+- JavaScript
+- Python
+
+### Frameworks Libraries and Programs Used
+
+- [Am I Responsive]()
+
 
 
 
