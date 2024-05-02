@@ -13,8 +13,34 @@ Live link can be found here:
 * [User Experience](#user-experience)
 * [Flow Chart](#flow-chart)
 * [User Stries](#user-stries)
-    +[First Time User](#first-time-user)
+    + [First Time User](#first-time-user)
     + [Returing User](#returing-user)
+
+* [Design](#design)
+    + [Colour Scheme](#colour-scheme)
+    + [Layout](#layout)
+
+* [Features](#features)
+    + [Welcome](#welcome)
+    + [Step 1](#step-1)
+    + [Step 2](#step-2)
+    + [Step 3](#step-3)
+    + [Game Over](#game-over)
+
+* [Technologies Used](#technologies-used)
+    + [Languages Used](#languages-used)
+    + [Frameworks, Libraries and programs Used](#frameworks-libraries-and-programs-used)
+
+* [Deployment](#deployment)
+* [Testing](#testing)
+* [Bugs](#bugs)
+    + [Solved Bugs](#solved-bugs)
+    + [Known Bugs](#known-bugs)
+* [Credits](#credits)
+
+
+### How To Play
+
 
 
 
