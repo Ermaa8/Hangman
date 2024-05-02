@@ -60,7 +60,7 @@ The guessing game will begin and based on your level and your choice you will ha
 ### Layout
  
 The site is a singe page with 5 steps
-- Wecme area
+- Welcome area
 - Step 1: is a part where you choose your level
 - Step 2: is a part where you exsplore
 - Step 3: is a part where your guessing game begin
@@ -151,7 +151,7 @@ These steps were taken for the deployment:
 - When testing a code in Pep8ci, 2 error appears and those errors describe that line is too long, but those lines has to be long in order to code to work. However I will try my best to expand my knowledge in the python language so that I know how to make a code that accept the amount of characters in that line.
 
 ## Acknowledgments
-- My mentor Antonio for his help and support and
+- My mentor Antonio for his help and support.
 - Slack community for tips and tricks.
 
 
