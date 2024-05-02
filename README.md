@@ -13,7 +13,6 @@ Live link can be found here:
     + [First Time User](#first-time-user)
     + [Returing User](#returing-user)
 * [Design](#design)
-    + [Colour Scheme](#colour-scheme)
     + [Layout](#layout)
 * [Features](#features)
     + [Welcome](#welcome)
@@ -55,9 +54,35 @@ The guessing game will begin and based on your level and your choice you will ha
 - As a first time user, i want to be able to test my knowledge in different categories and I want to have ability to play a game at anytime and anywhere. I expect the website to adjust to my device's screen size and I want the website to be easy to navigate and allow me to easy choose my level and category. 
 
 ### Returning User
-- As a returning user I want to be able to choose a hard level and challenge myself as much as possible. I want to be able to get a high score on a hard level and explore different categories and track my progress over time and see how my hangman skills improve everytime I visit.
+- As a returning user I want to be able to choose a hard level and challenge myself as much as possible. I want to be able to get a high score on a hard level and explore different categories and track my progress over time and see how my hangman skills improve everytime I visit a app.
 
+## Design
 
+### Layout
+ 
+The site is a singe page with 5 steps
+- Wecme area
+- Step 1: is a part where you choose your level
+- Step 2: is a part where you exsplore
+- Step 3: is a part where your guessing game begin
+- Game over
+
+## Features
+
+### Welcome
+- In the welcome area users will be able to see a red hangman figure, four steps that describes how to play a game and last step is where they can start a game by pressing a name.
+
+### Step 1
+- After users choose username they will be proceed to step 1 of the game where they will be able to choose a level with two options. Option one is easier one and more customized for begginers with eight lives. And option two is harder one where users will have four lives.
+
+### Step 2
+- Choosing a level, you will be able to choose a category and you will have five options. Cities, Countries, Flowers, Languages and Fruits. Press a number and start guessing. If you press wrong number, error message will appear on the screen.
+
+### Step 3
+- The red hangman bar will appear and everytime you guess wrong letter a line will appear and decrease your number of lives. If you guess right, letter will be placed in a right place.
+
+### Game Over
+- When you are done guessing, if you did not make it right, result will show you which word it was and you will have a option to continue if tou want or quit a game. An last but not least you will get game over message
 
 
 
