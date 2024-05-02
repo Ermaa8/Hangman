@@ -183,7 +183,7 @@ def display_hangman(mistakes, chosen_level):
                             display_per_mistake,
                             len(hangman_stages) - 1)
     print("\033[91m" + hangman_stages
-          [stages_to_display] + "\"033[0m")
+          [stages_to_display] + "\033[0m")
     return stages_to_display
 
 
@@ -281,47 +281,47 @@ def choose_category(name):
 def get_user_input(prompt):
     return input(prompt)
 
+def check_user_play(user_letter, word):
+    return user_letter.lower() in word.lower()
+   
+def display_current_status(mistakes, chosen_level, chosen_level_lives):
+    display_hangman(mistakes, chosen_level)
+    print(" ")
+    print('You have', chosen_level_lives - mistakes, 'lives left.')
+    # Yellow decorative line
+    print("\033[1;33;40m" + "_" * 22 + "\033[0m\n")
 
 def hangman():
     chosen_level, chosen_level_lives, name = choose_level()
     chosen_category, chosen_list = choose_category(name)
-    word = chosen_category
-    word_letters = set(word)
+    word = random.choice(categories[chosen_category])
+    guessed_letters = 0
     alphabet = set(string.ascii_uppercase)
     used_letters = set()
     mistakes = 0
-    while len(word_letters) > 0 and mistakes < chosen_level_lives:
+    can_play = True
+    while can_play:
         display_hangman(mistakes, chosen_level)
-        print(" ")
-        print('You have', chosen_level_lives - mistakes, 'lives left.')
-        # Yellow decorative line
-        print("\033[1;33;40m" + "_" * 22 + "\033[0m\n")
-        word_list = [f'\033[1;33;40m{letters}\033[0m' if letters in
-                     used_letters else '_' for letters in word]
-        print('Current word:', ''.join(word_list))
+        display_current_status(mistakes, chosen_level, chosen_level_lives)
+        hidden_word = [f'\033[1;33;40m{letters}\033[0m' if letters.lower() in
+                      used_letters else letters for letters in word]
+        print('Current word:', ''.join(hidden_word))
         print('Used letters:', ''.join(used_letters))
         print(" ")
         user_letter = input('Guess a letter: ').upper()
-        if user_letter in alphabet - used_letters:
-            clear_terminal()
-            used_letters.add(user_letter)
-            if user_letter in word_letters:
-                print("It was Estonia! "
-                      "Or maybe a Peru?\n"
-                      "\033[92mNo matter, you guessed right!\033[0m")
-                word_letters.remove(user_letter)
-            else:
-                mistakes += 1
-                print("\033[91mYikes! Swing and a miss...\033[0m")
-        elif user_letter in used_letters:
-            clear_terminal()
+        if user_letter.lower() in used_letters:
             print("\033[91mOopsie!\033[0m That letter's already"
                   "been served.\nLet's do something new!")
         else:
-            clear_terminal()
-            print("The keyboard just ate your character!")
-            print("\033[91mPlease choose a valid \033[0m"
-                  "\033[91mone before it attack again.\033[0m")
+            if check_user_play(user_letter, word):
+                print("It was Estonia! Or maybe a Peru?\n"
+                    "\033[92mNo matter, you guessed right!\033[0m")
+                guessed_letters = guessed_letters + word.lower().count(user_letter.lower())
+            else:
+                mistakes = mistakes + 1
+                print("\033[91mYikes! Swing and a miss...\033[0m")
+            used_letters.add(user_letter.lower())
+        can_play = (mistakes < chosen_level_lives) and (guessed_letters < len(word))
     if mistakes == chosen_level_lives:
         display_hangman(mistakes, chosen_level)
         print(" ")
