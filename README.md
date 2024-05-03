@@ -27,7 +27,6 @@ Live link can be found here:
 * [Deployment](#deployment)
 * [Testing](#testing)
 * [Bugs](#bugs)
-    + [Solved Bugs](#solved-bugs)
     + [Known Bugs](#known-bugs)
 * [Acknowledgments](# acknowledgments)
 
@@ -138,7 +137,6 @@ These steps were taken for the deployment:
 ![Testing 2](Readme.images/Picture2.png)
 
 ## Bugs
-### Solved Bugs
 - My first bug that is solved is that any word from category was not choosen when game was started.Instead of content inside a category, every category word for example "countries" was chosen.
 - Second solved bug is background image that did not show up in the beggining.
 - Before:
