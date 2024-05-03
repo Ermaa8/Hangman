@@ -4,7 +4,8 @@ This game is perfect game when you feel boring or if you just want to do somethi
 This game contains of two levels. First level is easier and second level is harder. Chosing your level will automacitly bring you to choose your category. There is five categories you can choose from. When you are ready, you can start to test your skills. Game if full of different frases, so don't take it seriously, make it fun and enjoy.
 
 Live link can be found here:
-![AppHangman]()
+![AppHangman](https://apphangman-e8d47c081117.herokuapp.com/)
+![AppHangman](Readme.images/Picture9.png)
 
 ## CONTENT
 
@@ -149,6 +150,7 @@ These steps were taken for the deployment:
 
 ### Known Bugs
 - When testing a code in Pep8ci, 2 error appears and those errors describe that line is too long, but those lines has to be long in order to code to work. However I will try my best to expand my knowledge in the python language so that I know how to make a code that accept the amount of characters in that line.
+- Some words inside the app are put together when they actually are two different words. When I change place of the word I get error in Pep8ci validator. 
 
 ## Acknowledgments
 - My mentor Antonio for his help and support.
