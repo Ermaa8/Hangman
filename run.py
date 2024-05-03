@@ -191,7 +191,7 @@ def choose_level():
     startup_view()
     name_is_valid = False
     while name_is_valid is False:
-        name = get_user_input("Gamer, your username"
+        name = get_user_input("Gamer, your username" 
                               "is your secret sauce."
                               "Make it funny!\n")
         clear_terminal()
